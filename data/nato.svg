@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="600px" viewBox="0 0 800 600">
+<rect fill="#022169" width="800" height="600"/>
+<g fill="#FFFFFF">
+	<rect x="397" y="60" width="6" height="70"/>
+	<rect x="397" y="470" width="6" height="70"/>
+	<rect x="570" y="297" width="170" height="6"/>
+	<rect x="60" y="297" width="170" height="6"/>
+	<path id="arcx" d="M419.867,405.658l-2.293,8.005c49.418-7.589,88.5-46.671,96.089-96.089l-8.005,2.293   C497.533,363.285,463.285,397.533,419.867,405.658z"/>
+	<use transform="rotate(90 400 300)" xlink:href="#arcx"/>
+	<use transform="rotate(180 400 300)" xlink:href="#arcx"/>
+	<use transform="rotate(270 400 300)" xlink:href="#arcx"/>
+	<path d="M433.409,266.589L400,150l-33.409,116.589L250,300l116.591,33.41L400,450l33.409-116.59L550,300   L433.409,266.589z M532.528,300l-106.747,25.675L400,300v132.528l-25.781-106.854L400,300H267.472l106.747-25.781L400,300V167.472   l25.781,106.747L400,300H532.528z"/>
+</g>
+</svg>
