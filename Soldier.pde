@@ -1,7 +1,8 @@
 class Soldier {
   String name;
-  Alliance alliance;
+//  Alliance side;
   PImage sprite;
+  boolean enemy; // true if bad guy, false if good guy
   
   int level;
   int hp, maxHP;

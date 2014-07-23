@@ -3,7 +3,6 @@ void setup() {
 }
 
 void draw() {
-  background(0);
   
-  shape(Alliance.BLUE.flag);
 }
+
