@@ -1,0 +1,12 @@
+{
+    "controls": {
+        "//comment": "Options separated by slashes",
+        "movement": "WASD/arrows",
+        "shoot": "space/left click",
+        "grenade": "G/enter"
+    },
+    "player": {
+        "name": "John Smith",
+        "sprite": "name-of-file.png"
+    }
+}
