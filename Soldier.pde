@@ -1,20 +1,39 @@
+static final float DEGREE = radians(1);
+
 class Soldier {
-  
-  // Everything should be read from a JSON save file
-  String name;
-  PImage sprite;
-  boolean enemy; // true if bad guy, false if good guy
-  
-  final Soldier(String name, String imgfile, boolean isEnemy) {
-    this.name = name;
-    this.sprite = loadImage(imgfile);
-    this.enemy = isEnemy;
-    level = 1;
-    
-  }
-  
-  int level;
   int hp, maxHP;
   int ammo, maxAmmo;
-  int exp;
+
+  PImage sprite = loadImage("soldier.png");
+
+  float x, y;
+
+  int kills, falls, money;
+
+  Soldier(float x, float y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  void draw() {
+    imageMode(CENTER);
+    image(sprite, x, y);
+  }
+
+  void up() {
+    y -= 2;
+  }
+
+  void down() {
+    y += 2;
+  }
+
+  void left() {
+    x -= 2;
+  }
+
+  void right() {
+    x += 2;
+  }
 }
+
