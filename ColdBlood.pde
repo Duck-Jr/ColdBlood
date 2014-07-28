@@ -4,12 +4,15 @@ HUD hud;
 PImage titlebackground;
 PImage startButton;
 PImage controlsButton;
+PImage bg;
 //numbers
 float startgamebuttonx, startgamebuttony;
 float controlsbuttonx, controlsbuttony;
-float s;
+
+int hp = 0;
 float movecontrolswitchx, movecontrolswitchy, moveswitchx;
 //booleans
+boolean hpRefilling = false;
 boolean isStarted;
 boolean changetoControlsScene;
 boolean wasd;
@@ -19,6 +22,7 @@ boolean moveswitchright;
 boolean dontmoveswitchright;
 boolean moveswitchleft;
 boolean dontmoveswitchleft;
+boolean isTabbed = false;
 
 ArrayList<PImage> img = new ArrayList<PImage>();
 
@@ -31,13 +35,13 @@ void setup() {
   img.add(loadImage("radar.png"));
   img.add(loadImage("usaFlag.png"));
   img.add(loadImage("russiaFlag.png"));
-  hud = new HUD(100, img, loadFont("Base02.vlw"), loadFont("Sans.vlw"));
+  bg = loadImage("bg.png");
+  hud = new HUD(100, img, loadFont("Base02.vlw"), loadFont("Sans.vlw"), 0.8F);
   isStarted = false;
   titlebackground = loadImage("coldresponsebackground.png");
   startButton = loadImage("buttonStart.png");
   controlsButton = loadImage("buttonControls.png");
   //integer and float values
-  s = 60;
   movecontrolswitchx = 350;
   movecontrolswitchy = 150;
   moveswitchx = 350;
@@ -90,7 +94,7 @@ void movecontrolswitch(float x, float y, float a) {
   text("WASD controls", x + 20, y + 60);
   fill(255, 0, 0);
   text("Arrow Keys", x + 290, y + 60);
-  fill(255, 150);
+  fill(0, 255, 0, 100);
   rect(a, y, 250, 100);
   //making switch move whenever WASD or ARROW KEYS are selected
   if (mouseX >= 600 && mouseY <= 250 && mouseX <= 850 && mouseY >= 150 && mousePressed && !dontmoveswitchright) {
@@ -173,14 +177,32 @@ void controlsscreen() {
 void draw() {
   //the change into the Control Scene
   clear();
+  
+  if(hpRefilling)
+  {
+    if(hp < 100)
+    hp += 2;
+    else
+    hpRefilling = false;
+  }
+   if(!hpRefilling)
+  {
+    if(hp > 0)
+    hp -= 2;
+    else
+    hpRefilling = true;
+  }
 
   if (isStarted)
-    hud.draw(98, false);   
+  {
+    image(bg, 0, 0, width, height);
+    hud.draw(hp, isTabbed);
+  }
 
-  if (changetoControlsScene == false && isStarted == false)
+  if (!changetoControlsScene && !isStarted)
     titlescreen();
 
-  if (changetoControlsScene == true)
+  if (changetoControlsScene)
     controlsscreen();
 }
 
@@ -192,5 +214,20 @@ public void mouseClicked()
 
   if (mouseX >= startgamebuttonx && mouseX <= startgamebuttonx + 300 && mouseY >= startgamebuttony && mouseY <= startgamebuttony + 75)
     isStarted = true;
+}
+
+
+public void keyPressed()
+{
+  if (key == 'b' || key == 'B')
+  {
+    changetoControlsScene = false;
+    isStarted = false;
+  }
+  
+  if(key == TAB)
+  {
+    isTabbed = !isTabbed;
+  }
 }
 
