@@ -27,20 +27,20 @@ boolean isTabbed = false;
 ArrayList<PImage> img = new ArrayList<PImage>();
 
 void setup() {
-  size(1200, 800);
+  size(1280, 720);
   //images
-  img.add(loadImage("hpBar.png"));
-  img.add(loadImage("infoWindow.png"));
-  img.add(loadImage("railGun.png"));
-  img.add(loadImage("radar.png"));
-  img.add(loadImage("usaFlag.png"));
-  img.add(loadImage("russiaFlag.png"));
-  bg = loadImage("bg.png");
-  hud = new HUD(100, img, loadFont("Base02.vlw"), loadFont("Sans.vlw"), 0.8F);
+  img.add(loadImage("Graphics/HUD/hpBar.png"));
+  img.add(loadImage("Graphics/HUD/infoWindow.png"));
+  img.add(loadImage("Graphics/Weapon/railGun.png"));
+  img.add(loadImage("Graphics/HUD/radar.png"));
+  img.add(loadImage("Graphics/HUD/US.png"));
+  img.add(loadImage("Graphics/HUD/RU.png"));
+  bg = loadImage("Graphics/Background/derpington.png");
+  hud = new HUD(100, img, loadFont("Font/Base02.vlw"), loadFont("Font/Sans.vlw"), 0.8F);
   isStarted = false;
-  titlebackground = loadImage("coldresponsebackground.png");
-  startButton = loadImage("buttonStart.png");
-  controlsButton = loadImage("buttonControls.png");
+  titlebackground = loadImage("Graphics/Background/bgHomeScreen.png");
+  startButton = loadImage("Graphics/GUI/buttonStart.png");
+  controlsButton = loadImage("Graphics/GUI/buttonControls.png");
   //integer and float values
   movecontrolswitchx = 350;
   movecontrolswitchy = 150;

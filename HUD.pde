@@ -229,7 +229,7 @@ public class HUDPlayerInfo extends HUDElement
     rect(posX + 65 * scale, posY + 16 * scale, 475 * scale, 240 * scale);
     image(background, posX, posY, background.width/8 * scale, background.height/8 * scale);
     tint(255, 160);
-    image(flag, posX + 125 * scale, posY + 56 * scale, flag.width/4 * scale, flag.height/4 * scale);
+    image(flag, posX + 125 * scale, posY + 56 * scale, flag.width * scale, flag.height * scale);
     noTint();
     fill(0, 255, 255);
     textSize(28);
@@ -333,8 +333,8 @@ public class HUDScoreBoard extends HUDElement
     tint(255, alpha);
     image(background, posX, posY, background.width/8 * scale, background.height/8 * scale);
     tint(255, alpha);
-    image(flag1, posX + 125 * scale, posY + 56 * scale, flag1.width/4 * scale, flag1.height/4 * scale);
-    image(flag2, posX + 125 * scale, posY + (56 + flag2.height/3) * scale, flag2.width/4 * scale, flag2.height/4 * scale);
+    image(flag1, posX + 125 * scale, posY + 54 * scale, flag1.width * scale, flag1.height * scale);
+    image(flag2, posX + 125 * scale, posY + (54 + flag2.height - 10) * scale, flag2.width * scale, flag2.height * scale);
     noTint();
     fill(0, 255, 255, alpha);
     textFont(font, 24 * scale);
