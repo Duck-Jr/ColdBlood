@@ -1,22 +1,6 @@
 public class World
 {
   protected
-<<<<<<< HEAD
-    float
-    sizeX, 
-  sizeY;
-
-  protected
-    float
-    posX, 
-  posY;
-
-
-  protected
-    PImage
-    landscape;
-
-=======
   float
   sizeX,
   sizeY;
@@ -30,8 +14,7 @@ public class World
   PImage
   landscape;
   
->>>>>>> ea8f90f06ae2879ad9919e3394074423824d52a2
-  public World(int levelWidth, int levelHeight, PImage levelBack)
+    public World(int levelWidth, int levelHeight, PImage levelBack)
   {
     sizeX = levelWidth;
     sizeY = levelHeight;
@@ -39,7 +22,6 @@ public class World
     posX = sizeX/2;
     posY = sizeY/2;
   }
-<<<<<<< HEAD
 
   public void draw(int x, int y)
   {
@@ -55,11 +37,3 @@ public class World
     }
   }
 }
-
-=======
-  
-  public void draw()
-  {
-  }
-}
->>>>>>> ea8f90f06ae2879ad9919e3394074423824d52a2

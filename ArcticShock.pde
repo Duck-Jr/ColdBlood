@@ -13,9 +13,7 @@ PImage titlebackground, startButton, controlsButton, bg, derptitle;
 float startgamebuttonx, startgamebuttony;
 float controlsbuttonx, controlsbuttony;
 
-int
-tempX, 
-tempY;
+int tempX, tempY;
 
 static ArrayList<Bullet> shots = new ArrayList<Bullet>();
 static ArrayList<Soldier> enemies = new ArrayList<Soldier>();
